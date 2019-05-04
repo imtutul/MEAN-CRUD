@@ -18,4 +18,16 @@ export class EmployeeService {
   postEmployee(emp: Employee) {
     return this.http.post(this.baseUrl, emp);
   }
+  updateEmployee(emp: Employee) {
+    return this.http.put(this.baseUrl + '/' + emp._id, emp);
+  }
+  deleteEmployee(emp) {
+    return this.http.delete(this.baseUrl + '/' + emp._id, emp);
+  }
+  getEmployees() {
+    return this.http.get(this.baseUrl);
+  }
+  getEmployeeById(id) {
+    return this.http.get(this.baseUrl + '/' + id);
+  }
 }
